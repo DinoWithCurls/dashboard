@@ -9,18 +9,18 @@ const ProtectedInput = ({ onInput }) => {
     onInput(event.target.value);
   };
   return (
-    <div className="inline-flex items-center bg-darkgray p-2 rounded-xl w-full">
+    <div className="inline-flex items-center bg-darkgray p-3 rounded-xl w-full">
       <input
         type={passwordShown ? "text" : "password"}
         placeholder="Enter the password"
-        className="outline-none bg-darkgray w-full font-bold"
+        className="outline-none bg-darkgray w-full font-semibold ml-2"
         onChange={handleChange}
       />
       <button onClick={togglePassword} className="outline-none">
         {passwordShown ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-5 w-5 text-sectext"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -40,7 +40,7 @@ const ProtectedInput = ({ onInput }) => {
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-5 w-5 text-sectext"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
