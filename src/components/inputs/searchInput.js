@@ -6,7 +6,7 @@ const SearchInput = ({ onInput }) => {
   }
   return (
     <div className="inline-flex items-center text-bordergray bg-white p-2 rounded-xl">
-      <input className="bg-white ml-2" onChange={handleChange} placeholder="Search..." />
+      <input className="bg-white ml-2 outline-none" onChange={handleChange} placeholder="Search..." />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5 mr-2"
