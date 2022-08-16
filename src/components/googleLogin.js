@@ -20,9 +20,9 @@ const GoogleLoginButton = () => {
         accessType: 'offline'
     });
     return (
-        <button onClick={signIn} className='flex justify-center items-center flex-row p-1 border rounded-full bg-gray-100 box-shadow'>
-            <img src={require('../icons/google.png')} alt="icon" className="ml-1 h-5 w-5" />
-            <span className="ml-1 mr-2 text-gray-400 font-thin">Sign in with Google</span>
+        <button onClick={signIn} className='flex justify-center items-center flex-row p-1 rounded-xl bg-white box-shadow'>
+            <img src={require('../icons/google.png')} alt="icon" className="ml-2 mr-2 h-5 w-5" />
+            <span className=" mr-4 text-sectext font-thin">Sign in with Google</span>
         </button>
     )
 }
