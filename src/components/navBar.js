@@ -137,7 +137,7 @@ const NavBar = ({ currentScreen }) => {
           );
         })}
       </ul>
-      <div className="text-white text-sm flex flex-col mb-0">
+      <div className="text-white text-sm flex flex-col mt-auto">
         <span>Help</span>
         <span>Contact Us</span>
       </div>
