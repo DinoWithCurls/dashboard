@@ -22,7 +22,7 @@ const Login = ({ setLogin }) => {
             <span className="text-lg font-medium">Sign in to your account</span>
           </div>
           <div className="flex flex-row justify-between mb-4">
-            <GoogleLoginButton />
+            <GoogleLoginButton setLogin={setLogin} />
             <AppleLoginButton />
           </div>
           <div className="w-full bg-white p-5 rounded-xl">

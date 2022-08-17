@@ -25,7 +25,7 @@ const Register = ({ enter }) => {
             </span>
           </div>
           <div className="flex flex-row justify-between mb-4">
-            <GoogleLoginButton />
+            <GoogleLoginButton setLogin={enter} />
             <AppleLoginButton />
           </div>
           <div className="w-full bg-white p-5 rounded-xl">
