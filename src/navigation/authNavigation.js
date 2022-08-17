@@ -11,7 +11,7 @@ const AuthNavigation = ({ setLogin }) => {
   return (
     <Routes>
       <Route path="/" element={<Login setLogin={enterProtectedView} />} />
-      <Route path="/register" element={<Register enter={setLogin} />} />
+      <Route path="/register" element={<Register enter={enterProtectedView} />} />
     </Routes>
   );
 };
