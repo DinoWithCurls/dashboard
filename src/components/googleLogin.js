@@ -1,13 +1,25 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useGoogleLogin } from "react-google-login";
+import { gapi } from 'gapi-script'
 import { refreshTokenSetup } from '../utils/refreshTokenSetup';
 import credentials from '../utils/credentials.json';
 const CLIENT_ID = credentials.web.client_id;
 
-const GoogleLoginButton = () => {
+const GoogleLoginButton = ({setLogin}) => {
+    useEffect(() => {
+        const initClient = () => {
+            gapi.client.init({
+                client_id: CLIENT_ID,
+                scope: ''
+            });
+        };
+        gapi.load('client:auth2', initClient)
+    })
+
     const onSuccess = (res) => {
         console.log('Success');
         refreshTokenSetup(res);
+        setLogin(true);
     }
     const onFailure = (err) => {
         console.log('Failure');
