@@ -25,7 +25,7 @@ const Login = ({ setLogin }) => {
             <GoogleLoginButton />
             <AppleLoginButton />
           </div>
-          <div className="w-full bg-white p-5 rounded-xl font-semibold">
+          <div className="w-full bg-white p-5 rounded-xl">
             <div className="mb-4">
               <span className="font-normal mt-2">Email Address</span>
               <BaseInput placeholderText={"Email"} />

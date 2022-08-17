@@ -9,11 +9,11 @@ const ProtectedInput = ({ onInput }) => {
     onInput(event.target.value);
   };
   return (
-    <div className="inline-flex items-center bg-darkgray p-3 rounded-xl w-full">
+    <div className="inline-flex items-center bg-lightgray p-3 rounded-xl w-full">
       <input
         type={passwordShown ? "text" : "password"}
         placeholder="Enter the password"
-        className="outline-none bg-darkgray w-full font-semibold ml-2"
+        className="outline-none bg-lightgray w-full font-semibold ml-2"
         onChange={handleChange}
       />
       <button onClick={togglePassword} className="outline-none">
