@@ -17,7 +17,8 @@ module.exports = {
       'lightgray': '#F5F5F5',
       'darkgray': '#EDEDED',
       'bggray': '#E5E5E5',
-      'bordergray': '#B0B0B0'
+      'bordergray': '#B0B0B0',
+      'switchgreen': '#88E15E'
     }
   },
   plugins: [],
