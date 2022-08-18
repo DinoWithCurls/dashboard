@@ -5,15 +5,15 @@ const DateInput = ({ onInput }) => {
     onInput(event.target.value);
   };
   return (
-    <div className="inline-flex items-center bg-darkgray p-2 rounded-xl w-full">
+    <div className="inline-flex items-center bg-lightgray p-2 rounded-xl w-full">
       <input
-        className="outline-none bg-darkgray w-full font-bold"
+        className="outline-none bg-lightgray w-full font-semibold ml-2"
         placeholder="Enter date"
         onChange={handleChange}
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 text-bordergray mr-2"
+        className="h-5 w-5 text-sectext mr-2"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
