@@ -3,7 +3,7 @@ const AddButton = ({ buttonAction }) => {
   return (
     <button
       onClick={buttonAction}
-      className="flex-row inline-flex items-center p-1 bg-themeblue text-white rounded-lg font-bold"
+      className="flex-row inline-flex items-center bg-themeblue text-white p-0.5 rounded-lg font-bold"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
