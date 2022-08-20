@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
 import PieComponent from "../components/pie";
@@ -78,19 +78,6 @@ const PieStats = ({ itemName, itemValue, itemDot }) => {
 };
 
 const Dashboard = () => {
-  const refContainer = useRef();
-  const [graphDimensions, setGraphDimensions] = useState({
-    width: 0,
-    height: 0,
-  });
-  useEffect(() => {
-    if (refContainer.current) {
-      setGraphDimensions({
-        width: refContainer.current.currentWidth,
-        height: refContainer.current.currentHeight,
-      });
-    }
-  }, []);
   return (
     <div className="w-screen h-screen flex bg-lightgray p-5 ">
       <div className="w-1/6">
@@ -154,7 +141,7 @@ const Dashboard = () => {
                   </div>
                 </div>
                 <div className="justify-center items-center">
-                  <div ref={refContainer} className="pt-5 px-10">
+                  <div className="pt-5 px-10">
                     <GraphComponent />
                   </div>
                 </div>
