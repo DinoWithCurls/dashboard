@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
 import PieComponent from "../components/pie";
+
+import GraphComponent from "../components/graph";
 
 import {
   TotalTransactionIcon,
@@ -43,14 +45,6 @@ const BubbleData = [
   },
 ];
 
-const PieData = [
-  { name: "Basic Tees", value: 55 },
-  { name: "Super Hoodies", value: 14 },
-  { name: "Custom Short Pants", value: 31 },
-];
-
-const PieStatColors = [ 'border-piegreen', 'border-pieyellow', 'border-piered']
-
 const Bubble = ({ itemName, itemValue, itemIcon, itemBackground }) => {
   return (
     <div
@@ -63,13 +57,19 @@ const Bubble = ({ itemName, itemValue, itemIcon, itemBackground }) => {
   );
 };
 
+const PieData = [
+  { name: "Basic Tees", value: 55 },
+  { name: "Super Hoodies", value: 14 },
+  { name: "Custom Short Pants", value: 31 },
+];
+
+const PieStatColors = ["border-piegreen", "border-pieyellow", "border-piered"];
+
 const PieStats = ({ itemName, itemValue, itemDot }) => {
   return (
     <div className="flex flex-col">
       <div className="inline-flex items-center">
-        <div
-          className={`${itemDot} border-4 w-2 h-2 rounded-full mr-2`}
-        ></div>
+        <div className={`${itemDot} border-4 w-2 h-2 rounded-full mr-2`}></div>
         <div className="font-bold">{itemName}</div>
       </div>
       <div className="text-sectext text-sm px-4">{itemValue}</div>
@@ -78,8 +78,21 @@ const PieStats = ({ itemName, itemValue, itemDot }) => {
 };
 
 const Dashboard = () => {
+  const refContainer = useRef();
+  const [graphDimensions, setGraphDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+  useEffect(() => {
+    if (refContainer.current) {
+      setGraphDimensions({
+        width: refContainer.current.currentWidth,
+        height: refContainer.current.currentHeight,
+      });
+    }
+  }, []);
   return (
-    <div className="w-screen h-screen flex bg-lightgray p-10 ">
+    <div className="w-screen h-screen flex bg-lightgray p-5 ">
       <div className="w-1/6">
         <NavBar currentScreen={"Dashboard"} />
       </div>
@@ -89,7 +102,7 @@ const Dashboard = () => {
         </div>
         <div className="flex justify-center items-center h-9/10">
           <div className="flex flex-col w-full h-full justify-between">
-            <div className="flex flex-row justify-between w-full pt-10">
+            <div className="flex flex-row justify-between w-full pt-10 ">
               <Bubble
                 itemName={BubbleData[0].name}
                 itemBackground={"bg-revenue"}
@@ -115,10 +128,39 @@ const Dashboard = () => {
                 itemIcon={BubbleData[3].icon}
               />
             </div>
-            <div className="pt-5">
-              <div className="bg-white rounded-xl p-5">Graph</div>
+            <div className="pt-2">
+              <div className="bg-white rounded-xl p-5 flex flex-col">
+                <div className="inline-flex items-center justify-between ">
+                  <div className="flex flex-col">
+                    <div className="font-bold text-xl">Activities</div>
+                    <div className="inline-flex items-center text-sectext">
+                      <div>May - June 2021</div>
+                      <DownIcon />
+                    </div>
+                  </div>
+                  <div className="flex flex-row w-[10%] justify-between">
+                    <div className="inline-flex items-center">
+                      <div
+                        className="border-lightred border-4 w-2 h-2 rounded-full mr-2"
+                      ></div>
+                      <div className="font-bold">Guest</div>
+                    </div>
+                    <div className="inline-flex items-center">
+                      <div
+                        className="border-lightgreen border-4 w-2 h-2 rounded-full mr-2"
+                      ></div>
+                      <div className="font-bold">User</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="justify-center items-center">
+                  <div ref={refContainer} className="pt-5 px-10">
+                    <GraphComponent />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-row justify-between pt-5 h-full">
+            <div className="flex flex-row justify-between pt-2 h-full">
               <div className="flex flex-col bg-white rounded-xl h-fit w-[48%] p-5">
                 <div className="flex flex-row justify-between">
                   <div>

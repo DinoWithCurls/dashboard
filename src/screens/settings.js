@@ -15,7 +15,7 @@ import ChangeButton from "../components/buttons/changeButton";
 
 const Settings = () => {
   return (
-    <div className="w-screen h-screen flex bg-lightgray p-10 ">
+    <div className="w-screen h-screen flex bg-lightgray p-5 ">
       <div className="w-1/6">
         <NavBar currentScreen={"Settings"} />
       </div>
