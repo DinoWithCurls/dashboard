@@ -1,5 +1,7 @@
 # DASHBOARD UI
 
+Deployed App URL: https://6300f04b6134775044c388e1--animated-sunflower-b81d83.netlify.app
+
 ## Setup
 Clone the repo, enter the folder, then run the following
 ### `yarn add`
