@@ -3,6 +3,7 @@ import { useGoogleLogin } from "react-google-login";
 import { gapi } from 'gapi-script'
 import { refreshTokenSetup } from '../utils/refreshTokenSetup';
 import credentials from '../utils/credentials.json';
+import { GoogleIcon } from "../icons";
 const CLIENT_ID = credentials.web.client_id;
 
 const GoogleLoginButton = ({setLogin}) => {
@@ -33,7 +34,7 @@ const GoogleLoginButton = ({setLogin}) => {
     });
     return (
         <button onClick={signIn} className='flex justify-center items-center flex-row p-1 rounded-xl bg-white box-shadow'>
-            <img src={require('../icons/google.png')} alt="icon" className="ml-2 mr-2 h-5 w-5" />
+            <GoogleIcon />
             <span className=" mr-4 text-sectext font-thin">Sign in with Google</span>
         </button>
     )
