@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
+import PieComponent from "../components/pie";
 
 import {
   TotalTransactionIcon,
@@ -42,6 +43,14 @@ const BubbleData = [
   },
 ];
 
+const PieData = [
+  { name: "Basic Tees", value: 55 },
+  { name: "Super Hoodies", value: 14 },
+  { name: "Custom Short Pants", value: 31 },
+];
+
+const PieStatColors = [ 'border-piegreen', 'border-pieyellow', 'border-piered']
+
 const Bubble = ({ itemName, itemValue, itemIcon, itemBackground }) => {
   return (
     <div
@@ -50,6 +59,20 @@ const Bubble = ({ itemName, itemValue, itemIcon, itemBackground }) => {
       <div className="ml-auto mr-3">{itemIcon}</div>
       <div className="text-lg">{itemName}</div>
       <div className="text-3xl font-bold">{itemValue}</div>
+    </div>
+  );
+};
+
+const PieStats = ({ itemName, itemValue, itemDot }) => {
+  return (
+    <div className="flex flex-col">
+      <div className="inline-flex items-center">
+        <div
+          className={`${itemDot} border-4 w-2 h-2 rounded-full mr-2`}
+        ></div>
+        <div className="font-bold">{itemName}</div>
+      </div>
+      <div className="text-sectext text-sm px-4">{itemValue}</div>
     </div>
   );
 };
@@ -95,7 +118,7 @@ const Dashboard = () => {
             <div className="pt-5">
               <div className="bg-white rounded-xl p-5">Graph</div>
             </div>
-            <div className="flex flex-row justify-between pt-5">
+            <div className="flex flex-row justify-between pt-5 h-full">
               <div className="flex flex-col bg-white rounded-xl h-fit w-[48%] p-5">
                 <div className="flex flex-row justify-between">
                   <div>
@@ -106,8 +129,30 @@ const Dashboard = () => {
                     <DownIcon />
                   </div>
                 </div>
+                <div className="inline-flex items-center justify-end">
+                  <div className="pt-2 w-[100%] h-[100%]">
+                    <PieComponent data={PieData} />
+                  </div>
+                  <div className="flex flex-col w-full">
+                    <PieStats
+                      itemName={PieData[0].name}
+                      itemValue={PieData[0].value}
+                      itemDot={PieStatColors[0]}
+                    />
+                    <PieStats
+                      itemName={PieData[1].name}
+                      itemValue={PieData[1].value}
+                      itemDot={PieStatColors[1]}
+                    />
+                    <PieStats
+                      itemName={PieData[2].name}
+                      itemValue={PieData[2].value}
+                      itemDot={PieStatColors[2]}
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="bg-white flex flex-col rounded-xl h-fit w-[48%] p-5">
+              <div className="bg-white flex flex-col rounded-xl h-full w-[48%] p-5">
                 <div className="flex flex-row justify-between">
                   <div>
                     <div className="font-bold text-xl">Today's Schedule</div>
@@ -117,18 +162,26 @@ const Dashboard = () => {
                     <RightIcon />
                   </div>
                 </div>
-                <div className="pt-2">
+                <div className="pt-10">
                   <div className="flex flex-col border-l-4 border-lightgreen pl-2">
-                    <div className="text-lg">Meeting with suppliers from Kuta Bali</div>
+                    <div className="text-lg">
+                      Meeting with suppliers from Kuta Bali
+                    </div>
                     <div className="text-sm text-sectext">14:00-15:00</div>
-                    <div className="text-sm text-sectext">at Sunset Road, Kuta, Bali</div>
+                    <div className="text-sm text-sectext">
+                      at Sunset Road, Kuta, Bali
+                    </div>
                   </div>
                 </div>
-                <div className="pt-2">
+                <div className="pt-5">
                   <div className="flex flex-col border-l-4 border-borderblue pl-2">
-                    <div className="text-lg">Check operation at Giga Factory 1</div>
+                    <div className="text-lg">
+                      Check operation at Giga Factory 1
+                    </div>
                     <div className="text-sm text-sectext">18:00-20:00</div>
-                    <div className="text-sm text-sectext">at Central Jakarta</div>
+                    <div className="text-sm text-sectext">
+                      at Central Jakarta
+                    </div>
                   </div>
                 </div>
               </div>
