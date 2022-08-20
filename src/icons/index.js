@@ -90,7 +90,7 @@ const DashboardIcon = () => {
 
 const LikesIcon = () => {
   return (
-    <div className="h-5 w-5">
+    <div className="h-6 w-6">
       <img src={require("./Likes.png")} alt="like" />
     </div>
   );
@@ -98,7 +98,7 @@ const LikesIcon = () => {
 
 const MultipleUserIcon = () => {
   return (
-    <div className="h-5 w-5">
+    <div className="h-7 w-7">
       <img src={require("./Users.png")} alt="users" />
     </div>
   );
@@ -106,7 +106,7 @@ const MultipleUserIcon = () => {
 
 const RevenueIcon = () => {
   return (
-    <div className="h-5 w-5">
+    <div className="h-6 w-6">
       <img src={require("./Revenue.png")} alt="rvn" />
     </div>
   );
