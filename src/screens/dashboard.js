@@ -2,9 +2,14 @@ import React from "react";
 import NavBar from "../components/navBar";
 import Header from "../components/header";
 
-import { TotalTransactionIcon, MultipleUserIcon, RevenueIcon, LikesIcon } from "../icons";
-
-
+import {
+  TotalTransactionIcon,
+  MultipleUserIcon,
+  RevenueIcon,
+  LikesIcon,
+  RightIcon,
+  DownIcon,
+} from "../icons";
 
 const BubbleData = [
   {
@@ -91,11 +96,41 @@ const Dashboard = () => {
               <div className="bg-white rounded-xl p-5">Graph</div>
             </div>
             <div className="flex flex-row justify-between pt-5">
-              <div className="bg-white rounded-xl h-fit w-[38%] p-5">
-                Pie Chart
+              <div className="flex flex-col bg-white rounded-xl h-fit w-[48%] p-5">
+                <div className="flex flex-row justify-between">
+                  <div>
+                    <div className="font-bold text-xl">Top Products</div>
+                  </div>
+                  <div className="inline-flex items-center text-sectext">
+                    <div>May - June 2021</div>
+                    <DownIcon />
+                  </div>
+                </div>
               </div>
-              <div className="bg-white rounded-xl h-fit w-[58%] p-5">
-                Messages
+              <div className="bg-white flex flex-col rounded-xl h-fit w-[48%] p-5">
+                <div className="flex flex-row justify-between">
+                  <div>
+                    <div className="font-bold text-xl">Today's Schedule</div>
+                  </div>
+                  <div className="inline-flex items-center text-sectext">
+                    <div>See All</div>
+                    <RightIcon />
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <div className="flex flex-col border-l-4 border-lightgreen pl-2">
+                    <div className="text-lg">Meeting with suppliers from Kuta Bali</div>
+                    <div className="text-sm text-sectext">14:00-15:00</div>
+                    <div className="text-sm text-sectext">at Sunset Road, Kuta, Bali</div>
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <div className="flex flex-col border-l-4 border-borderblue pl-2">
+                    <div className="text-lg">Check operation at Giga Factory 1</div>
+                    <div className="text-sm text-sectext">18:00-20:00</div>
+                    <div className="text-sm text-sectext">at Central Jakarta</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

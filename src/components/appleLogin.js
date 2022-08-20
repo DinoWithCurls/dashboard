@@ -6,7 +6,7 @@ const AppleLoginButton = () => {
     }
     return (
         <button onClick={handleClick} className='flex justify-center items-center flex-row p-1 bg-white rounded-xl'>
-            
+            <AppleIcon />
             <span className=' mr-4 text-sectext font-thin'>Sign in with Apple</span>
         </button>
 
