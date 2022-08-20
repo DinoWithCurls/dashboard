@@ -11,6 +11,7 @@ import ProtectedInput from "../components/inputs/protectedInput";
 import SaveButton from "../components/buttons/saveButton";
 import DeleteButton from "../components/buttons/deleteButton";
 import SwitchButton from "../components/buttons/switchButton";
+import ChangeButton from "../components/buttons/changeButton";
 
 const Settings = () => {
   return (
@@ -22,19 +23,19 @@ const Settings = () => {
         <div>
           <Header screenName={"Settings"} />
         </div>
-        <div className="flex pt-8 h-full">
+        <div className="flex pt-8 h-full justify-between">
           <div className="flex w-full h-4/6">
-            <div className="flex rounded-xl flex-col w-3/6 bg-white p-10 mr-auto">
+            <div className="flex rounded-xl flex-col w-[40%] bg-white p-10 mr-auto">
               <div className="text-2xl font-bold">Profile</div>
               <div className=" flex flex-row pt-5">
                 <div className=" flex flex-col w-1/3">
-                  <div className="w-full justify-center items-center">
+                  <div className="w-full">
                     <Icon
                       iconUrl={require("../images/small.png")}
                       iconView={"Large"}
                     />
-                    <div>Change</div>
                   </div>
+                  <div className="pt-2"><ChangeButton /></div>
                 </div>
                 <div className="w-full">
                   <div className="flex flex-row justify-between">
@@ -63,7 +64,7 @@ const Settings = () => {
                 </div>
               </div>
             </div>
-            <div className="flex h-full">
+            <div className="flex h-full w-[50%]">
               <div className="flex flex-col space-y-4 h-full">
                 <div className="w-full rounded-xl justify-between bg-white p-10">
                   <div className="text-2xl font-bold">Account</div>
