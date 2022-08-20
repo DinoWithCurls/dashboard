@@ -2,9 +2,8 @@ import React, {useEffect} from "react";
 import { useGoogleLogin } from "react-google-login";
 import { gapi } from 'gapi-script'
 import { refreshTokenSetup } from '../utils/refreshTokenSetup';
-import credentials from '../utils/credentials.json';
 import { GoogleIcon } from "../icons";
-const CLIENT_ID = credentials.web.client_id;
+const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID + '.apps.googleusercontent.com';
 
 const GoogleLoginButton = ({setLogin}) => {
     useEffect(() => {
